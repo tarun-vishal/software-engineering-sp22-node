@@ -1,6 +1,5 @@
 import {Request, Response, Express} from "express";
 import TuitDao from "../daos/TuitDao";
-import tuitDao from "../daos/tuitDao";
 import TuitControllerI from "../interfaces/TuitControllerI";
 import Tuit from "../models/Tuit";
 
