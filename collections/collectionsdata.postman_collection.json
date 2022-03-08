@@ -1,0 +1,722 @@
+{
+	"info": {
+		"_postman_id": "9d36ae1c-02ac-4679-bc9d-98dbaee20deb",
+		"name": "CS5500SP22",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"bob\",\n    \"password\": \"bob123\",\n    \"email\": \"bob@marley.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3dc7f15c20cf75a6888",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3dc7f15c20cf75a6888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create dummy user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"dummy\",\n    \"password\": \"dummy123\",\n    \"email\": \"dummy@nowhere.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"dummuUpdated\",\n    \"password\": \"dummyUpdatedPswd\",\n    \"email\": \"dummyupdated@marley.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6227b5337f3b3dafaf5600d9",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6227b5337f3b3dafaf5600d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"bobby\",\n    \"password\": \"bob123\",\n    \"email\": \"bob@marley.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6227c22afbf3a720cbb923ed",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6227c22afbf3a720cbb923ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"bobby\",\n    \"password\": \"bob123\",\n    \"email\": \"bob@marley.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tuits",
+			"item": [
+				{
+					"name": "Find All Tuits",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/tuits",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"tuits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Tuit by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/tuits/6202c63672685dcedad808c0",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"tuits",
+								"6202c63672685dcedad808c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Tuits by User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/tuits/620298ab7f15c20cf75a6881/tuits",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"tuits",
+								"620298ab7f15c20cf75a6881",
+								"tuits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tuit for User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tuit\": \"Bobby boy tweets again\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/tuits",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"tuits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tuit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tuit\": \"Spacex tweets again\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/tuits/6202c63672685dcedad808c0",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"tuits",
+								"6202c63672685dcedad808c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tuit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"bobby\",\n    \"password\": \"bob123\",\n    \"email\": \"bob@marley.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/tuits/6202c63672685dcedad808c0",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"tuits",
+								"6202c63672685dcedad808c0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "likes",
+			"item": [
+				{
+					"name": "User Likes Tuit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3bc7f15c20cf75a6886/likes/6202c5e472685dcedad808bd",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3bc7f15c20cf75a6886",
+								"likes",
+								"6202c5e472685dcedad808bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Unlikes Tuit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3bc7f15c20cf75a6886/unlikes/6202c5e472685dcedad808bd",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3bc7f15c20cf75a6886",
+								"unlikes",
+								"6202c5e472685dcedad808bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Tuits Liked By User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3bc7f15c20cf75a6886/likes",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3bc7f15c20cf75a6886",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Users That Liked Tuit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/tuits/6202c5e472685dcedad808bd/likes",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"tuits",
+								"6202c5e472685dcedad808bd",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follows",
+			"item": [
+				{
+					"name": "User1 Follows User2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3bc7f15c20cf75a6886/follows/6202b3dc7f15c20cf75a6888",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3bc7f15c20cf75a6886",
+								"follows",
+								"6202b3dc7f15c20cf75a6888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User1 Unfollows User2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3bc7f15c20cf75a6886/unfollows/6202b3dc7f15c20cf75a6888",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3bc7f15c20cf75a6886",
+								"unfollows",
+								"6202b3dc7f15c20cf75a6888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Users Followed By User1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3bc7f15c20cf75a6886/following",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3bc7f15c20cf75a6886",
+								"following"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Users Following User2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3bc7f15c20cf75a6886/followedby",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3bc7f15c20cf75a6886",
+								"followedby"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "User1 Messages User2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\":\"Hey Bruh\",\n    \"from\":\"6202b4027f15c20cf75a688a\",\n    \"to\":\"6227b5167f3b3dafaf5600d6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/messages/6202b4027f15c20cf75a688a/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages",
+								"6202b4027f15c20cf75a688a",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User1 unsends message",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/messages/6227ce6067d2a3ac04089c71/delete",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								"6227ce6067d2a3ac04089c71",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Messages Sent By User1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/messages/6202b4027f15c20cf75a688a/sent",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								"6202b4027f15c20cf75a688a",
+								"sent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Messages Receoved by User2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/messages/6227b5167f3b3dafaf5600d6/received",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								"6227b5167f3b3dafaf5600d6",
+								"received"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookmarks",
+			"item": [
+				{
+					"name": "User Bookmarks Tuit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3dc7f15c20cf75a6888/bookmarks/6202c63672685dcedad808c0",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3dc7f15c20cf75a6888",
+								"bookmarks",
+								"6202c63672685dcedad808c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Unlikes Tuit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3dc7f15c20cf75a6888/unbookmarks/6202c63672685dcedad808c0",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3dc7f15c20cf75a6888",
+								"unbookmarks",
+								"6202c63672685dcedad808c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Tuits Bookmarked By User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://software-engineering-sp22-a2.herokuapp.com/users/6202b3dc7f15c20cf75a6888/bookmarks",
+							"protocol": "https",
+							"host": [
+								"software-engineering-sp22-a2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6202b3dc7f15c20cf75a6888",
+								"bookmarks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
