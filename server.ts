@@ -2,8 +2,13 @@ import express, {Request, Response} from 'express';
 import mongoose from "mongoose";
 import UserController from "./controllers/UserController";
 import TuitController from "./controllers/TuitController";
+import BookmarksController from "./controllers/BookmarksController";
+import FollowsController from "./controllers/FollowsController";
+import LikeController from "./controllers/LikeController";
+import MessagesController from "./controllers/MessagesController";
 import UserDao from "./daos/UserDao";
 import TuitDao from "./daos/TuitDao";
+
 
 const app = express();
 
@@ -21,6 +26,10 @@ mongoose.connect(url);
 app.use(express.json());
 const userController = new UserController(app, new UserDao());
 const tuitController = new TuitController(app, new TuitDao());
+BookmarksController.getInstance(app);
+FollowsController.getInstance(app);
+LikeController.getInstance(app);
+MessagesController.getInstance(app);
 const PORT = 4000;
 app.listen(process.env.PORT || PORT);
 
