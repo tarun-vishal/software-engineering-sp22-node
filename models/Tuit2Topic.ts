@@ -1,3 +1,6 @@
+/**
+ * @file Represents Tuit to Topic.
+ */
 import Tuit from "./Tuit";
 
 

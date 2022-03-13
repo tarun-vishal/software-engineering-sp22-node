@@ -1,5 +1,9 @@
+/**
+ * @file Implements mongoose schema for Messages
+ */
 import mongoose, {Schema} from "mongoose";
 import Messages from "../models/Message";
+
 
 const MessagesSchema = new mongoose.Schema<Messages>({
     message:{type: String, required: true},

@@ -1,4 +1,8 @@
+/**
+ * @file Represents Tuit to Tag.
+ */
 import Tuit from "./Tuit";
+
 
 export default class Tuit2Tag {
   private tag: string = '';
