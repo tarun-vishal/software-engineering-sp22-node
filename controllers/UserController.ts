@@ -27,7 +27,7 @@ export default class UserController implements UserControllerI {
     this.userDao = userDao;
     this.app.get('/users', this.findAllUsers);
     this.app.get('/users/:userid', this.findUserById);
-
+    this.app.delete("/users/username/:username/delete", this.deleteUsersByUsername);
     this.app.post('/users', this.createUser);
     this.app.delete('/users/:userid', this.deleteUser);
     this.app.put('/users/:userid', this.updateUser);
@@ -87,4 +87,16 @@ export default class UserController implements UserControllerI {
   updateUser = (req: Request, res: Response) =>
       this.userDao.updateUser(req.params.userid, req.body)
       .then(status => res.json(status));
+
+
+  /**
+   * Removes a user instance from the database
+   * @param {Request} req Represents request from client, including path
+   * parameter username which are to be deleted.
+   * @param {Response} res Represents response to client, including status
+   * on whether deleting user based on username was successful or not
+   */
+  deleteUsersByUsername = (req:Request, res:Response) =>
+      this.userDao.deleteUsersByUsername(req.params.username)
+      .then(status => res.send(status));
 }

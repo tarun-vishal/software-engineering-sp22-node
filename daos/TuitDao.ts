@@ -70,4 +70,23 @@ export default class TuitDao implements TuitDaoI {
     return await TuitModel.deleteOne({_id: tid});
   }
 
+  /**
+   * Inserts tuit instance into the database
+   * @param {Tuit} tuit Instance to be inserted into the database
+   * @param {string} uid user ID for which tuit is to be created.
+   * @returns Promise To be notified when tuit is inserted into the database
+   */
+  async createUserTuit(uid: string, tuit: Tuit): Promise<Tuit> {
+    return await TuitModel.create(tuit);
+  }
+
+  /**
+   * Removes tuits from the database based on user ID provided.
+   * @param {string} uid Primary key of uid for tuits to be removed
+   * @returns Promise To be notified when tuits are removed from the database
+   */
+  async deleteUserTuit(uid: string): Promise<any> {
+    return await TuitModel.deleteMany({postedBy:uid});
+  }
+
 }

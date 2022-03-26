@@ -59,4 +59,21 @@ export default interface TuitControllerI {
    * on whether deleting a user was successful or not
    */
   deleteTuit(req: Request, res: Response): void;
+
+  /**
+   * @param {Request} req Represents request from client, including path
+   * parameter uid identifying the primary key of the user for which tuit is to be created.
+   * @param {Response} res Represents response to client, including the
+   * body formatted as JSON containing the new tuit that was inserted in the
+   * database.
+   */
+  createUserTuit(req: Request, res: Response): void;
+
+  /**
+   * @param {Request} req Represents request from client, including path
+   * parameter uid identifying the primary key of the user for whom tuits are to be removed
+   * @param {Response} res Represents response to client, including status
+   * on whether deleting tuits was successful or not
+   */
+  deleteUserTuit(req: Request, res: Response): void;
 }

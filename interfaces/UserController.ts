@@ -53,4 +53,13 @@ export default interface UserController {
    * on whether updating a user was successful or not
    */
   updateUser(req: Request, res: Response): void;
+
+  /**
+   * Removes a user instance from the database
+   * @param {Request} req Represents request from client, including path
+   * parameter username which are to be deleted.
+   * @param {Response} res Represents response to client, including status
+   * on whether deleting user based on username was successful or not
+   */
+  deleteUsersByUsername(req:Request, res:Response): void;
 }

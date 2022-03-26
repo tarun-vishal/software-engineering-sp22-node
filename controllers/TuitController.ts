@@ -34,6 +34,8 @@ export default class TuitController implements TuitControllerI {
     app.post("/tuits", this.createTuit);
     app.put("/tuits/:tid", this.updateTuit);
     app.delete("/tuits/:tid", this.deleteTuit);
+    this.app.post("/users/:uid/tuits", this.createUserTuit);
+    this.app.delete('/users/tuits/:uid', this.deleteUserTuit);
   }
 
   /**
@@ -97,5 +99,26 @@ export default class TuitController implements TuitControllerI {
    */
   updateTuit = (req: Request, res: Response) =>
       this.tuitDao.updateTuit(req.params.tid, req.body)
+      .then(status => res.json(status));
+
+  /**
+   * @param {Request} req Represents request from client, including path
+   * parameter uid identifying the primary key of the user for which tuit is to be created.
+   * @param {Response} res Represents response to client, including the
+   * body formatted as JSON containing the new tuit that was inserted in the
+   * database.
+   */
+  createUserTuit = (req: Request, res: Response) =>
+      this.tuitDao.createUserTuit(req.params.uid, req.body)
+      .then(tuit => res.json(tuit));
+
+  /**
+   * @param {Request} req Represents request from client, including path
+   * parameter uid identifying the primary key of the user for whom tuits are to be removed
+   * @param {Response} res Represents response to client, including status
+   * on whether deleting tuits was successful or not
+   */
+  deleteUserTuit = (req: Request, res: Response) =>
+      this.tuitDao.deleteUserTuit(req.params.uid)
       .then(status => res.json(status));
 }
