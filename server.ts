@@ -8,6 +8,7 @@ import LikeController from "./controllers/LikeController";
 import MessagesController from "./controllers/MessagesController";
 import UserDao from "./daos/UserDao";
 import TuitDao from "./daos/TuitDao";
+import cors from 'cors';
 
 
 const app = express();
@@ -22,7 +23,7 @@ const password = process.env.PASSWORD;
 const url = `mongodb+srv://${userName}:${password}@cluster0.ubosn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(url);
 
-
+app.use(cors())
 app.use(express.json());
 const userController = new UserController(app, new UserDao());
 const tuitController = new TuitController(app, new TuitDao());
