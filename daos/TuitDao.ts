@@ -11,6 +11,19 @@ import TuitDaoI from "../interfaces/TuitDaoI";
  * of tuits
  */
 export default class TuitDao implements TuitDaoI {
+  private static dao: TuitDao | null = null;
+  /**
+   * Returns the instance of TuitDao. If instance is not present the
+   * first creates the instance and the returns the same instance.
+   * @returns {TuitDao} singleton of Likes DAO
+   */
+  public static getInstance = (): TuitDao => {
+    if (TuitDao.dao === null) {
+      TuitDao.dao = new TuitDao();
+    }
+    return TuitDao.dao;
+  }
+  private constructor() { }
 
   /**
    * Uses TuitModel to retrieve all tuits from tuits collection
@@ -79,6 +92,17 @@ export default class TuitDao implements TuitDaoI {
   async createUserTuit(uid: string, tuit: Tuit): Promise<Tuit> {
     return await TuitModel.create(tuit);
   }
+
+  /**
+   * Updates likes count with new values in database
+   * @param {string} tid Primary key of tuit stas to be modified
+   * @param {any} newStats new stats object for the tuit to be updated
+   * @returns Promise To be notified when tuit stats is updated in the database
+   */
+  updateLikes = async (tid: string, newStats: any): Promise<any> =>
+      TuitModel.updateOne(
+          { _id: tid },
+          { $set: { stats: newStats } });
 
   /**
    * Removes tuits from the database based on user ID provided.

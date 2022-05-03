@@ -5,6 +5,7 @@
 import LikeModel from "../mongoose/LikeModel";
 import Like from "../models/Like";
 import LikeDaoI from "../interfaces/LikeDaoI";
+import TuitModel from "../mongoose/TuitModel";
 
 
 /**
@@ -65,4 +66,37 @@ export default class LikeDao implements LikeDaoI {
    */
     userUnlikesTuit = async (uid: string, tid: string): Promise<any> =>
         LikeModel.deleteOne({tuit: tid, likedBy: uid});
+
+  /**
+   * check if there's a likes document in the database for user/tuit combination
+   * @param uid user id to search liked tuit on
+   * @param tid tuit id to check for
+   * @returns boolean representing presence of document
+   */
+  findUserLikesTuit =
+      async (uid: string, tid: string) =>
+          LikeModel.findOne(
+              { tuit: tid, likedBy: uid });
+  /**
+   * count how many users liked a tuit
+   * @param tid tuit id of the tuit
+   * @returns count of users liking the tuit
+   */
+  countHowManyLikedTuit =
+      async (tid: string) =>
+          LikeModel.count({ tuit: tid });
+
+
+
+  /**
+   * update a tuit's stats
+   * @param tid id ot the tuit
+   * @param newStats new stats of the tuit
+   * @returns
+   */
+  updateLikes =
+      async (tid:string, newStats: object) =>
+          TuitModel.updateOne(
+              {_id: tid},
+              {$set: {stats: newStats}});
 }
