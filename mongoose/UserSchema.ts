@@ -1,4 +1,11 @@
+/**
+ * @file Implements mongoose schema for users
+ */
 import mongoose from "mongoose";
+
+/**
+ * @typedef UserSchema which is a representation of users
+ */
 const UserSchema = new mongoose.Schema({
   username: {type: String, required: true},
   password: {type: String, required: true},
