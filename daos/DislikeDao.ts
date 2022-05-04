@@ -58,7 +58,14 @@
                }
              })
              .exec();
- 
+   /**
+    * Removes dislike from the database.
+    * @param {string} uid User's primary key
+    * @param {string} tid Tuit's primary key
+    * @returns Promise To be notified when dislike is removed from the database
+    */
+   userUndislikesTuit = async (uid: string, tid: string): Promise<any> =>
+       DislikeModel.deleteOne({tuit: tid, dislikedBy: uid});
       /**
        * Inserts dislike instance into the database
        * @param {string} uid User's primary key
@@ -68,12 +75,5 @@
      userDislikesTuit = async (uid: string, tid: string): Promise<any> =>
          DislikeModel.create({tuit: tid, dislikedBy: uid});
  
-      /**
-       * Removes dislike from the database.
-       * @param {string} uid User's primary key
-       * @param {string} tid Tuit's primary key
-       * @returns Promise To be notified when dislike is removed from the database
-       */
-     userUndislikesTuit = async (uid: string, tid: string): Promise<any> =>
-         DislikeModel.deleteOne({tuit: tid, dislikedBy: uid});
+
  }
