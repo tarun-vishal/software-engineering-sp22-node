@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(session(sess));
 app.use(express.json());
 const userController = new UserController(app, new UserDao());
-const tuitController = new TuitController(app, new TuitDao());
+const tuitController = new TuitController(app, TuitDao.getInstance());
 BookmarksController.getInstance(app);
 FollowsController.getInstance(app);
 LikeController.getInstance(app);

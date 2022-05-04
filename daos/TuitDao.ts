@@ -104,6 +104,7 @@ export default class TuitDao implements TuitDaoI {
           { _id: tid },
           { $set: { stats: newStats } });
 
+
   /**
    * Removes tuits from the database based on user ID provided.
    * @param {string} uid Primary key of uid for tuits to be removed
@@ -112,5 +113,12 @@ export default class TuitDao implements TuitDaoI {
   async deleteUserTuit(uid: string): Promise<any> {
     return await TuitModel.deleteMany({postedBy:uid});
   }
+
+  updateDislikes = async (tid: string, newStats:any) =>
+      TuitModel.updateOne(
+          {_id: tid},
+          {$set: {stats: newStats}});
+
+
 
 }
